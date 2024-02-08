@@ -1,112 +1,118 @@
 <p align="center">
     <a href="https://trino.io/"><img alt="Trino Logo" src=".github/homepage.png" /></a>
 </p>
-<p align="center">
-    <b>Trino is a fast distributed SQL query engine for big data analytics.</b>
+
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><p align="center" dir="auto">
+    <a href="https://trino.io/" rel="nofollow"><img alt="特里诺标志" src="/trinodb/trino/raw/master/.github/homepage.png" style="max-width: 100%;"></a>
 </p>
-<p align="center">
-    See the <a href="https://trino.io/docs/current/">User Manual</a> for deployment instructions and end user documentation.
+<p align="center" dir="auto">
+    <b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trino 是一个用于大数据分析的快速分布式 SQL 查询引擎。</font></font></b>
 </p>
-<p align="center">
-   <a href="https://trino.io/download.html">
-       <img src="https://img.shields.io/maven-central/v/io.trino/trino-server.svg?label=Trino" alt="Trino download" />
+<p align="center" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关部署说明和最终用户文档，
+</font><font style="vertical-align: inherit;">
+    请参阅</font></font><a href="https://trino.io/docs/current/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用户手册。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<p align="center" dir="auto">
+   <a href="https://trino.io/download.html" rel="nofollow">
+       <img src="https://camo.githubusercontent.com/dbcd8e44ae2968c0d98704acf6720d421ecf0ba730e06909c1cd5f4da97a3602/68747470733a2f2f696d672e736869656c64732e696f2f6d6176656e2d63656e7472616c2f762f696f2e7472696e6f2f7472696e6f2d7365727665722e7376673f6c6162656c3d5472696e6f" alt="三诺下载" data-canonical-src="https://img.shields.io/maven-central/v/io.trino/trino-server.svg?label=Trino" style="max-width: 100%;">
    </a>
-   <a href="https://trino.io/slack.html">
-       <img src="https://img.shields.io/static/v1?logo=slack&logoColor=959DA5&label=Slack&labelColor=333a41&message=join%20conversation&color=3AC358" alt="Trino Slack" />
+   <a href="https://trino.io/slack.html" rel="nofollow">
+       <img src="https://camo.githubusercontent.com/bebccb76ed84bb5ea78e299541a425a1bc5052e9357c72ad75f9dd8915e07c8f/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6f676f3d736c61636b266c6f676f436f6c6f723d393539444135266c6162656c3d536c61636b266c6162656c436f6c6f723d333333613431266d6573736167653d6a6f696e253230636f6e766572736174696f6e26636f6c6f723d334143333538" alt="特里诺松弛" data-canonical-src="https://img.shields.io/static/v1?logo=slack&amp;logoColor=959DA5&amp;label=Slack&amp;labelColor=333a41&amp;message=join%20conversation&amp;color=3AC358" style="max-width: 100%;">
    </a>
-   <a href="https://trino.io/trino-the-definitive-guide.html">
-       <img src="https://img.shields.io/badge/Trino%3A%20The%20Definitive%20Guide-download-brightgreen" alt="Trino: The Definitive Guide book download" />
+   <a href="https://trino.io/trino-the-definitive-guide.html" rel="nofollow">
+       <img src="https://camo.githubusercontent.com/06547df1a9ac63c57171c7cea42c6ebba59c858f287802e75c9b2a92c2fe9dd0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5472696e6f253341253230546865253230446566696e697469766525323047756964652d646f776e6c6f61642d627269676874677265656e" alt="Trino：权威指南书籍下载" data-canonical-src="https://img.shields.io/badge/Trino%3A%20The%20Definitive%20Guide-download-brightgreen" style="max-width: 100%;">
    </a>
 </p>
-
-## Development
-
-See [DEVELOPMENT](.github/DEVELOPMENT.md) for information about code style,
-development process, and guidelines.
-
-See [CONTRIBUTING](.github/CONTRIBUTING.md) for contribution requirements.
-
-## Security
-
-See the project [security policy](.github/SECURITY.md) for
-information about reporting vulnerabilities.
-
-## Build requirements
-
-* Mac OS X or Linux
-* Java 21.0.1+, 64-bit
-* Docker
-  * Turn SELinux or other systems disabling write access to the local checkout
-    off, to allow containers to mount parts of the Trino source tree
-
-## Building Trino
-
-Trino is a standard Maven project. Simply run the following command from the
-project root directory:
-
-    ./mvnw clean install -DskipTests
-
-On the first build, Maven downloads all the dependencies from the internet
-and caches them in the local repository (`~/.m2/repository`), which can take a
-while, depending on your connection speed. Subsequent builds are faster.
-
-Trino has a comprehensive set of tests that take a considerable amount of time
-to run, and are thus disabled by the above command. These tests are run by the
-CI system when you submit a pull request. We recommend only running tests
-locally for the areas of code that you change.
-
-## Running Trino in your IDE
-
-### Overview
-
-After building Trino for the first time, you can load the project into your IDE
-and run the server.  We recommend using
-[IntelliJ IDEA](http://www.jetbrains.com/idea/). Because Trino is a standard
-Maven project, you easily can import it into your IDE.  In IntelliJ, choose
-*Open Project* from the *Quick Start* box or choose *Open*
-from the *File* menu and select the root `pom.xml` file.
-
-After opening the project in IntelliJ, double check that the Java SDK is
-properly configured for the project:
-
-* Open the File menu and select Project Structure
-* In the SDKs section, ensure that JDK 21 is selected (create one if none exist)
-* In the Project section, ensure the Project language level is set to 21
-
-### Running a testing server
-
-The simplest way to run Trino for development is to run the `TpchQueryRunner`
-class. It will start a development version of the server that is configured with
-the TPCH connector. You can then use the CLI to execute queries against this
-server. Many other connectors have their own `*QueryRunner` class that you can
-use when working on a specific connector.
-
-### Running the full server
-
-Trino comes with sample configuration that should work out-of-the-box for
-development. Use the following options to create a run configuration:
-
-* Main Class: `io.trino.server.DevelopmentServer`
-* VM Options: `-ea -Dconfig=etc/config.properties -Dlog.levels-file=etc/log.properties -Djdk.attach.allowAttachSelf=true`
-* Working directory: `$MODULE_DIR$`
-* Use classpath of module: `trino-server-dev`
-
-The working directory should be the `trino-server-dev` subdirectory. In
-IntelliJ, using `$MODULE_DIR$` accomplishes this automatically.
-
-If `VM options` doesn't exist in the dialog, you need to select `Modify options`
-and enable `Add VM options`.
-
-### Running the CLI
-
-Start the CLI to connect to the server and run SQL queries:
-
-    client/trino-cli/target/trino-cli-*-executable.jar
-
-Run a query to see the nodes in the cluster:
-
-    SELECT * FROM system.runtime.nodes;
-
-Run a query against the TPCH connector:
-
-    SELECT * FROM tpch.tiny.region;
+<h2 tabindex="-1" dir="auto"><a id="user-content-development" class="anchor" aria-hidden="true" tabindex="-1" href="#development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发展</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关代码风格、开发过程和指南的信息，</font><font style="vertical-align: inherit;">请参阅</font></font><a href="/trinodb/trino/blob/master/.github/DEVELOPMENT.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关贡献要求，</font><font style="vertical-align: inherit;">请参阅</font></font><a href="/trinodb/trino/blob/master/.github/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-security" class="anchor" aria-hidden="true" tabindex="-1" href="#security"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安全</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关报告漏洞的信息，</font><font style="vertical-align: inherit;">请参阅项目</font></font><a href="/trinodb/trino/blob/master/.github/SECURITY.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安全策略。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-build-requirements" class="anchor" aria-hidden="true" tabindex="-1" href="#build-requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建要求</font></font></h2>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mac OS X 或 Linux</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Java 21.0.1+，64 位</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">码头工人
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关闭 SELinux 或其他禁用本地结帐写入访问的系统，以允许容器挂载 Trino 源树的部分内容</font></font></li>
+</ul>
+</li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-building-trino" class="anchor" aria-hidden="true" tabindex="-1" href="#building-trino"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">建设三诺</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trino 是一个标准的 Maven 项目。</font><font style="vertical-align: inherit;">只需从项目根目录运行以下命令：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>./mvnw clean install -DskipTests
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="./mvnw clean install -DskipTests" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在第一个构建中，Maven 从互联网下载所有依赖项并将它们缓存在本地存储库 ( </font></font><code>~/.m2/repository</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">) 中，这可能需要一段时间，具体取决于您的连接速度。</font><font style="vertical-align: inherit;">后续构建速度更快。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trino 有一套全面的测试，需要相当长的时间才能运行，因此可以通过上述命令禁用。</font><font style="vertical-align: inherit;">当您提交拉取请求时，这些测试由 CI 系统运行。</font><font style="vertical-align: inherit;">我们建议仅在本地对您更改的代码区域运行测试。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-running-trino-in-your-ide" class="anchor" aria-hidden="true" tabindex="-1" href="#running-trino-in-your-ide"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 IDE 中运行 Trino</font></font></h2>
+<h3 tabindex="-1" dir="auto"><a id="user-content-overview" class="anchor" aria-hidden="true" tabindex="-1" href="#overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">概述</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">第一次构建 Trino 后，您可以将项目加载到 IDE 中并运行服务器。</font><font style="vertical-align: inherit;">我们建议使用
+</font></font><a href="http://www.jetbrains.com/idea/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IntelliJ IDEA</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">由于 Trino 是一个标准 Maven 项目，因此您可以轻松地将其导入到 IDE 中。</font><font style="vertical-align: inherit;">在 IntelliJ 中，从</font><em><font style="vertical-align: inherit;">“快速启动”</font></em><font style="vertical-align: inherit;">框中选择
+</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">“打开项目”</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ，或
+从</font><em><font style="vertical-align: inherit;">“文件”</font></em><font style="vertical-align: inherit;">菜单中选择</font><em><font style="vertical-align: inherit;">“打开</font></em><font style="vertical-align: inherit;">”并选择根</font><font style="vertical-align: inherit;">文件。</font></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font><code>pom.xml</code><font style="vertical-align: inherit;"></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 IntelliJ 中打开项目后，仔细检查是否已为该项目正确配置了 Java SDK：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">打开文件菜单并选择项目结构</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 SDK 部分中，确保选择 JDK 21（如果不存在则创建一个）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在“项目”部分中，确保“项目语言级别”设置为 21</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-running-a-testing-server" class="anchor" aria-hidden="true" tabindex="-1" href="#running-a-testing-server"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行测试服务器</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行 Trino 进行开发的最简单方法是运行该类</font></font><code>TpchQueryRunner</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+。</font><font style="vertical-align: inherit;">它将启动配置有 TPCH 连接器的服务器的开发版本。</font><font style="vertical-align: inherit;">然后，您可以使用 CLI 对此服务器执行查询。</font><font style="vertical-align: inherit;">许多其他连接器都有自己的</font></font><code>*QueryRunner</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">类，您可以在处理特定连接器时使用它们。</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-running-the-full-server" class="anchor" aria-hidden="true" tabindex="-1" href="#running-the-full-server"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行完整的服务器</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trino 附带了示例配置，可以开箱即用地进行开发。</font><font style="vertical-align: inherit;">使用以下选项创建运行配置：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">主要类别：</font></font><code>io.trino.server.DevelopmentServer</code></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虚拟机选项：</font></font><code>-ea -Dconfig=etc/config.properties -Dlog.levels-file=etc/log.properties -Djdk.attach.allowAttachSelf=true</code></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">工作目录：</font></font><code>$MODULE_DIR$</code></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用模块的类路径：</font></font><code>trino-server-dev</code></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">工作目录应该是</font></font><code>trino-server-dev</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">子目录。</font><font style="vertical-align: inherit;">在 IntelliJ 中，使用</font></font><code>$MODULE_DIR$</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动完成此操作。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果</font></font><code>VM options</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对话框中不存在，您需要选择</font></font><code>Modify options</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+并启用</font></font><code>Add VM options</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-running-the-cli" class="anchor" aria-hidden="true" tabindex="-1" href="#running-the-cli"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行 CLI</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启动 CLI 连接到服务器并运行 SQL 查询：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>client/trino-cli/target/trino-cli-*-executable.jar
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="client/trino-cli/target/trino-cli-*-executable.jar" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行查询以查看集群中的节点：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>SELECT * FROM system.runtime.nodes;
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="SELECT * FROM system.runtime.nodes;" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">针对 TPCH 连接器运行查询：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>SELECT * FROM tpch.tiny.region;
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="SELECT * FROM tpch.tiny.region;" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+</article></div>
